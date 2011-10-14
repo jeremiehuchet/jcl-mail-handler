@@ -1,0 +1,54 @@
+h1. JCL MailHandler for Java Commons Logging API
+
+h2. What is it?
+
+This is a simple ServletContextListener to register a logger handler to forward some log event to one or multiple mail addresses.
+
+h2. How to use it?
+
+Add a listener and some context parameters to the web application context file.
+
+Sample web.xml file:
+
+<pre>
+<web-app>
+[...]
+    <listener>
+        <listener-class>fr.dudie.logging.jcl.LoggerContextListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>application-name</param-name>
+        <param-value>My app</param-value>
+    </context-param>
+    <context-param>
+        <param-name>sender</param-name>
+        <param-value>noreply@appname.appspotmail.com</param-value>
+    </context-param>
+    <context-param>
+        <param-name>recipient</param-name>
+        <param-value>someone@company.com, someoneelse@company.com</param-value>
+    </context-param>
+    <context-param>
+        <param-name>level</param-name>
+        <param-value>SEVERE</param-value>
+    </context-param>
+[...]
+</web-app>
+</pre>
+
+h2. What is the result?
+
+Every log record of level higher or equals to _SEVERE_ will cause an email to be sent to the _recipient_.
+
+Sample mail:
+
+<pre>
+Subject: [My app] Error event logged
+
+An error event has been logged for application My app.
+
+Date: Fri Oct 14 02:23:29 CEST 2011
+Message: Log record sample
+Stacktrace:
+...
+</pre>

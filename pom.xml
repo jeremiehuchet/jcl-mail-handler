@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>dudie-parent</artifactId>
+        <groupId>fr.dudie</groupId>
+        <version>1.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jcl-mail-handler</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>JCL MailHandler</name>
+    <description>A MailHandler for Java Commons Logging API</description>
+    <inceptionYear>2011</inceptionYear>
+    <url>http://kops.github.com/jcl-mail-handler</url>
+
+    <developers>
+        <developer>
+            <id>kops</id>
+            <name>Jérémie Huchet</name>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <properties>
+                <contact>http://www.google.com/recaptcha/mailhide/d?k=01ZGpzgTpH16GtSj8NB93DsQ==&amp;c=WrY-DpDtsC0sd8emmUY07rAJ5IhIoRWnxieganlteL0=</contact>
+            </properties>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>GNU General Public License, Version 3</name>
+            <url>http://www.gnu.org/licenses/gpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/kops/jcl-mail-handler/tree/master</url>
+        <connection>scm:git:git@github.com:kops/jcl-mail-handler.git</connection>
+        <developerConnection>scm:git:git@github.com:kops/jcl-mail-handler.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>Github tracker</system>
+        <url>https://github.com/kops/jcl-mail-handler/issues</url>
+    </issueManagement>
+
+    <properties>
+        <servlet-api.version>2.5</servlet-api.version>
+        <mail-api.version>1.4.4</mail-api.version>
+        <junit.version>4.8.2</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${mail-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <configuration>
+                    <header>https://raw.github.com/kops/dudie-parent/master/etc/file-header-gpl.txt</header>
+                    <properties>
+                        <year>${project.inceptionYear}</year>
+                        <owner>Jeremie Huchet</owner>
+                    </properties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
