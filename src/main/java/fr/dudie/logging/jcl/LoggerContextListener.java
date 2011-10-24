@@ -51,7 +51,7 @@ import javax.servlet.ServletContextListener;
  *         &lt;param-value&gt;observer@company.com&lt;/param-value&gt;
  *     &lt;/context-param&gt;
  *     &lt;context-param&gt;
- *         &lt;param-name&gt;lin-level&lt;/param-name&gt;
+ *         &lt;param-name&gt;min-level&lt;/param-name&gt;
  *         &lt;param-value&gt;SEVERE&lt;/param-value&gt;
  *     &lt;/context-param&gt;
  * [...]
