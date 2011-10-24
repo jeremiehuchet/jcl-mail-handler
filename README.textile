@@ -29,7 +29,7 @@ Sample web.xml file:
         <param-value>someone@company.com, someoneelse@company.com</param-value>
     </context-param>
     <context-param>
-        <param-name>level</param-name>
+        <param-name>min-level</param-name>
         <param-value>SEVERE</param-value>
     </context-param>
 [...]
